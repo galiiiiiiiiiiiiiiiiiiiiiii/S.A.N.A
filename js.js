@@ -7,9 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         this.style.transform = "scale(1)";
       }, 100);
-
-      console.log("Opening chatbot...");
-      alert("🌟 Chatbot akan segera dibuka! Ini hanya preview desain landing page.");
     });
   });
 
@@ -23,6 +20,9 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting) {
         entry.target.style.opacity = "1";
         entry.target.style.transform = "translateY(0)";
+      } else {
+        entry.target.style.opacity = "0";
+        entry.target.style.transform = "translateY(30px)";
       }
     });
   }, observerOptions);
@@ -36,7 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const featureCards = document.querySelectorAll(".feature-card");
-  featureCards.forEach((card) => {
+  featureCards.forEach((card, index) => {
+    card.style.opacity = "0";
+    card.style.transform = "translateY(20px)";
+    card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+    observer.observe(card);
+
     card.addEventListener("mouseenter", function () {
       this.style.backgroundColor = "#fff";
     });
@@ -47,11 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const chatBubbles = document.querySelectorAll(".chat-bubble");
   chatBubbles.forEach((bubble, index) => {
-    bubble.style.opacity = "0";
-    setTimeout(() => {
-      bubble.style.opacity = "1";
-      bubble.style.transition = "opacity 0.5s ease";
-    }, (index + 1) * 800);
+    bubble.style.animationDelay = `${index * 0.3}s`;
   });
 
   const stats = document.querySelectorAll(".stat-number");
@@ -97,20 +98,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("%c💙 S.A.N.A - Safe AI for Need & Affection", "color: #4A90E2; font-size: 20px; font-weight: bold;");
   console.log("%cLanding page design ready! This is a design preview.", "color: #5D6D7E; font-size: 14px;");
-});
-
-window.addEventListener("load", function () {
-  const chatPreview = document.querySelector(".chat-preview");
-  if (chatPreview) {
-    let position = 0;
-    let direction = 1;
-
-    setInterval(() => {
-      position += direction * 0.5;
-      if (position > 10 || position < -10) {
-        direction *= -1;
-      }
-      chatPreview.style.transform = `translateY(${position}px)`;
-    }, 50);
-  }
 });
