@@ -62,7 +62,7 @@ p {
   color: var(--text-gray);
 }
 
-.cta-button {
+.btn {
   padding: 12px 28px;
   border: none;
   border-radius: 30px;
@@ -77,28 +77,18 @@ p {
   text-align: center;
 }
 
-.cta-button.primary {
+.btn-primary {
   background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
   color: white;
 }
 
-.cta-button.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px var(--shadow-dark);
-}
-
-.cta-button.secondary {
+.btn-secondary {
   background: white;
   color: var(--primary-blue);
   border: 2px solid var(--primary-blue);
 }
 
-.cta-button.secondary:hover {
-  background: var(--primary-blue);
-  color: white;
-}
-
-.cta-button.large {
+.btn-large {
   padding: 16px 40px;
   font-size: 1.2rem;
 }
@@ -134,14 +124,14 @@ p {
   object-fit: cover;
 }
 
-.hero {
+.header-utama {
   background: linear-gradient(135deg, var(--bg-cream) 0%, #e3f2fd 100%);
   padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
+.header-utama::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -153,7 +143,7 @@ p {
   border-radius: 50%;
 }
 
-.hero-content {
+.konten-utama {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -162,28 +152,28 @@ p {
   z-index: 1;
 }
 
-.hero-subtitle {
+.subjudul {
   font-size: 1.3rem;
   color: var(--primary-blue);
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
-.hero-description {
+.deskripsi {
   font-size: 1.1rem;
   color: var(--text-gray);
   margin-bottom: 2rem;
   line-height: 1.8;
 }
 
-.hero-buttons {
+.tombol-aksi {
   display: flex;
   gap: 15px;
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
 
-.hero-stats {
+.statistik {
   display: flex;
   gap: 40px;
   margin-top: 2rem;
@@ -428,11 +418,6 @@ p {
   flex: 1;
   min-width: 250px;
   max-width: 300px;
-  transition: transform 0.3s ease;
-}
-
-.step:hover {
-  transform: scale(1.05);
 }
 
 .step-number {
@@ -488,26 +473,26 @@ p {
   margin-bottom: 0.8rem;
 }
 
-.final-cta {
+.bagian-akhir {
   padding: 100px 0;
   background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
   color: white;
   text-align: center;
 }
 
-.cta-content h2 {
+.wrapper-akhir h2 {
   color: white;
   font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
-.cta-content p {
+.wrapper-akhir p {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-.cta-note {
+.note {
   margin-top: 1rem;
   font-size: 0.9rem;
   opacity: 0.8;
@@ -559,16 +544,16 @@ p {
     font-size: 2rem;
   }
 
-  .hero-content {
+  .konten-utama {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .hero-buttons {
+  .tombol-aksi {
     justify-content: center;
   }
 
-  .hero-stats {
+  .statistik {
     justify-content: center;
   }
 
@@ -600,12 +585,12 @@ p {
     font-size: 1.6rem;
   }
 
-  .hero-buttons {
+  .tombol-aksi {
     flex-direction: column;
     width: 100%;
   }
 
-  .cta-button {
+  .btn {
     width: 100%;
   }
 
